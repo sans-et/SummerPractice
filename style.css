@@ -47,13 +47,25 @@ header {
   background-color: royalblue;
   font-size: 50px;
   color: rgb(255, 255, 255);
-  display: flex;
   justify-content: center;
+  padding: 20px;
 }
 .description2 {
   background-color: royalblue;
   font-size: 20px;
   color: rgb(255, 255, 255);
+}
+.rules {
+  background-color: rgb(206, 215, 243);
+  font-size: 50px;
+  color: royalblue;
+  justify-content: center;
+  padding: 20px;
+}
+.rules2 {
+  background-color: rgb(206, 215, 243);
+  font-size: 20px;
+  color: royalblue;
 }
 .footer {
   background-color: rgb(255, 255, 255);
