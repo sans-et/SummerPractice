@@ -16,6 +16,7 @@ main {
 header {
   position: sticky;
   top: 0;
+  z-index: 1000;
 }
 .header {
   background-color: rgb(255, 255, 255);
@@ -24,8 +25,7 @@ header {
   justify-content: space-around;
   align-items: center;
   cursor: pointer;
-  padding: 20px;
-  height: 20px;
+  height: 55px;
   font-weight: 400;
 }
 .header a {
@@ -33,21 +33,17 @@ header {
   color: royalblue;
 }
 .header a:hover {
-  color: rgb(41, 67, 145);
+  color: rgb(28, 43, 88);
 }
-.bt1 {
-  font-size: 15px;
-  width: 140px;
-  height: 30px;
-  border-radius: 10px;
-  border-style: groove;
-  background-color: rgb(255, 255, 255);
-  border-color: royalblue;
+
+.home {
+  margin-top: 10px;
 }
-.bt1:hover {
-  color: rgb(187, 204, 255);
-  border-color: rgb(187, 204, 255);
+.home:hover {
+  transition: 0.5s;
+  transform: scale(1.2);
 }
+
 .title {
   color: royalblue;
   font-size: 100px;
@@ -55,7 +51,6 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 30px;
 }
 .title div {
   display: flex;
@@ -64,35 +59,68 @@ header {
 }
 .title button {
   margin-top: 20px;
-  font-size: 20px;
-  padding: 10px 20px;
+  font-size: 25px;
+  padding: 10px 30px;
   background-color: royalblue;
   color: white;
   border: none;
-  border-radius: 20px;
+  border-radius: 25px;
   cursor: pointer;
-  width: 170px;
+  width: 200px;
+  -webkit-animation: pulsing 2s infinite;
+  animation: pulsing 2s infinite;
+}
+
+@-webkit-keyframes pulsing {
+  0% {
+    -webkit-transform: scale(0.8, 0.8);
+    transform: scale(0.8, 0.8);
+  }
+  50% {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+  100% {
+    -webkit-transform: scale(0.8, 0.8);
+    transform: scale(0.8, 0.8);
+  }
+}
+
+@keyframes pulsing {
+  0% {
+    -webkit-transform: scale(0.8, 0.8);
+    transform: scale(0.8, 0.8);
+  }
+  50% {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+  100% {
+    -webkit-transform: scale(0.8, 0.8);
+    transform: scale(0.8, 0.8);
+  }
 }
 .title button:hover {
   transition: 1s;
   transform: scale(1.1);
-  box-shadow: 3px 0px 50px rgba(0, 0, 255, 0.2);
+  box-shadow: 0px 0px 34px rgba(0, 0, 255, 0.5);
 }
 .title img {
-  margin-left: 30px;
   border-radius: 20px;
+  position: relative;
+  left: +400px;
+  transition: left 0.5s;
+  margin-top: 50px;
+}
+.title img.animate {
+  left: 0;
 }
 .description {
-  background-color: rgb(206, 215, 243);
   font-size: 20px;
-  color: royalblue;
-  margin: 40px;
+  background-color: royalblue;
+  color: rgb(255, 255, 255);
+  padding: 30px;
   overflow: hidden;
-}
-.pig {
-  border-radius: 20%;
-  margin: 20px;
-  float: left;
 }
 
 .icons {
@@ -148,8 +176,55 @@ header {
   padding: 10px;
   font-size: 20px;
 }
-@media (max-width: 750px) {
-  .header {
-    color: brown;
+
+@media (max-width: 390px) {
+  body {
+    max-width: 768px;
+  }
+  .header a {
+    font-size: 15px;
+    color: royalblue;
+  }
+  .title {
+    color: royalblue;
+    font-size: 45px;
+    font-weight: 600;
+    display: inline;
+  }
+  .title div {
+    align-items: center;
+    margin-top: 40px;
+  }
+  .title button {
+    margin-top: 20px;
+    font-size: 20px;
+    padding: 10px 20px;
+    background-color: royalblue;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 170px;
+  }
+  .title img {
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    height: 210px;
+    margin-inline: 95px;
+    margin-top: 20px;
+    align-self: center;
+  }
+
+  .icons {
+    margin: 20px;
+  }
+  .footer {
+    font-size: 15px;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  .info {
+    font-size: 12px;
   }
 }
